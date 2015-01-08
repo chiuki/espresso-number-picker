@@ -1,0 +1,31 @@
+apply plugin: 'com.android.application'
+
+android {
+  compileSdkVersion 21
+  buildToolsVersion "21.1.2"
+
+  defaultConfig {
+    applicationId "com.sqisland.android.espresso_number_picker"
+    minSdkVersion 11
+    targetSdkVersion 21
+    versionCode 1
+    versionName "1.0.0"
+
+    testInstrumentationRunner 'com.google.android.apps.common.testing.testrunner.GoogleInstrumentationTestRunner'
+  }
+
+  packagingOptions {
+    exclude 'LICENSE.txt'
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+    }
+  }
+
+  dependencies {
+    androidTestCompile 'com.jakewharton.espresso:espresso:1.1-r3'
+  }
+}
